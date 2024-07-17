@@ -14,7 +14,7 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: calc(100vh - ${NAV_BAR_HEIGHT}px);
   padding-top: 110px;

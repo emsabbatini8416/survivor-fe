@@ -1,15 +1,17 @@
 
 import { Checkbox } from "@mui/material"
-import { StyledActions, StyledCheck, StyledItemContainer, StyledMain } from "./styles"
+import { StyledActions, StyledButtonWrapper, StyledCheck, StyledItemContainer, StyledMain } from "./styles"
 import { Icon, SpanText } from "components"
+import { ShoppingItem } from "typings/models"
 
 export interface ItemProps {
-  title: string
-  description: string
+  item: ShoppingItem
+  onDelete: (id: string) => void
+  onEdit: () => void
 }
 
 const Item = (props: ItemProps) => {
-  const { title, description } = props
+  const { item: { _id, name: title, description }, onDelete, onEdit } = props
   return (
     <StyledItemContainer>
       <StyledCheck>
@@ -20,8 +22,12 @@ const Item = (props: ItemProps) => {
         <SpanText variant='NUNITO_16_600_20' color="#7D7A7A">{description}</SpanText>
       </StyledMain>
       <StyledActions>
-        <Icon name="Edit" />
-        <Icon name="Delete" />
+        <StyledButtonWrapper onClick={onEdit}>
+          <Icon name="Edit" />
+        </StyledButtonWrapper>
+        <StyledButtonWrapper onClick={() => onDelete(_id)}>
+          <Icon name="Delete" />
+        </StyledButtonWrapper>
       </StyledActions>
     </StyledItemContainer>
   )  

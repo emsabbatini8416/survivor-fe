@@ -1,23 +1,45 @@
-import { useEffect, useState } from "react"
-import { getShoppingList } from "services"
+import { useCallback, useEffect, useState } from "react"
+import { deleteShoppingItemById, getShoppingList } from "services"
 
 const useGetShoppingList = () => {
   const [list, setList] =  useState<any[]>([])
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  useEffect(() => {
-    async function init(){
+  const fetch = useCallback(async() => {
+    try {
+      setIsLoading(true)
       const res = await getShoppingList<any>()
       setList(res.data.items)
+    } catch {
+      setList([])
+    } finally {
+      setIsLoading(false)
     }
-    init()
   }, [])
 
-  return {
-    shoppingList: list
-  }
+  useEffect(() => {
+    fetch()
+  }, [fetch])
 
+  return {
+    shoppingList: list,
+    refetch: fetch,
+    isLoading
+  }
+}
+
+const useDeleteShoppingItem = () => {
+
+  const onDelete = async(id: string) => {
+    return await deleteShoppingItemById(id)
+  }
+  
+  return {
+    onDelete
+  }
 }
 
 export {
-  useGetShoppingList
+  useGetShoppingList,
+  useDeleteShoppingItem
 }

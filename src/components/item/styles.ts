@@ -22,3 +22,9 @@ export const StyledMain = styled.div`
 export const StyledActions = styled.div`
   display: flex;
 `
+
+export const StyledButtonWrapper = styled.div`
+  :hover {
+    cursor: pointer;
+  }
+`
