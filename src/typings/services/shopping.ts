@@ -1,12 +1,13 @@
-import type { ShoppingItem } from "typings/models"
+import type { ShoppingItem } from 'typings/models'
 
 export interface ShoppingItemPostPayloadRequest {
-  name: string,
-  description: string,
+  name: string
+  description: string
   quantity: number
 }
 
-export interface ShoppingItemPatchPayloadRequest extends ShoppingItemPostPayloadRequest {
+export interface ShoppingItemPatchPayloadRequest
+  extends ShoppingItemPostPayloadRequest {
   _id: ShoppingItem['_id']
   purchased: boolean
 }

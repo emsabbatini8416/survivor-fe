@@ -1,5 +1,5 @@
-import { StyledMenuItem, StyledSelect } from "./styles"
-import { SelectProps as MuiSelectProps } from '@mui/material/Select';
+import { StyledMenuItem, StyledSelect } from './styles'
+import { SelectProps as MuiSelectProps } from '@mui/material/Select'
 
 export interface SelectOptionProps {
   value: string | number | null
@@ -7,14 +7,16 @@ export interface SelectOptionProps {
 }
 
 export type SelectProps<T = unknown> = {
-  items: SelectOptionProps[],
-} & MuiSelectProps<T>;
+  items: SelectOptionProps[]
+} & MuiSelectProps<T>
 
-const Select = ({ items , value , onChange }: SelectProps) => {
-  return(
+const Select = ({ items, value, onChange }: SelectProps) => {
+  return (
     <StyledSelect value={value} onChange={onChange}>
       {items.map((item: SelectOptionProps, i: number) => (
-        <StyledMenuItem key={i} value={item.value}>{item.name}</StyledMenuItem>
+        <StyledMenuItem key={i} value={item.value}>
+          {item.name}
+        </StyledMenuItem>
       ))}
     </StyledSelect>
   )

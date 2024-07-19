@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { NAV_BAR_HEIGHT } from "../utils/constants";
+import styled from '@emotion/styled'
+import { NAV_BAR_HEIGHT } from '../utils/constants'
 
 export const Layout = styled.div`
   display: grid;
@@ -7,7 +7,7 @@ export const Layout = styled.div`
   grid-template-rows: ${NAV_BAR_HEIGHT}px calc(100% - ${NAV_BAR_HEIGHT}px);
   position: relative;
   width: 100%;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 `
 
 export const Container = styled.div`

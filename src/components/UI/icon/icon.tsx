@@ -1,12 +1,11 @@
-
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 import * as IconsMUI from '@mui/icons-material'
 
 export type IconNames = keyof typeof IconsMUI
 
 export interface IconProps {
   name: IconNames
-  color?: string;
+  color?: string
 }
 
 const Icon = ({ color = '#555F7C', name }: IconProps) => {
@@ -16,7 +15,7 @@ const Icon = ({ color = '#555F7C', name }: IconProps) => {
     const StyledIcon = styled(Component)`
       color: ${color};
       margin: 10px;
-    `;
+    `
     return <StyledIcon />
   }
 

@@ -1,12 +1,20 @@
-import { useCallback, useEffect, useState } from "react"
-import { deleteShoppingItemById, getShoppingList, patchShoppingItem, postShoppingItem } from "services"
-import type { ShoppingItemPatchPayloadRequest, ShoppingItemPostPayloadRequest } from "typings/services"
+import { useCallback, useEffect, useState } from 'react'
+import {
+  deleteShoppingItemById,
+  getShoppingList,
+  patchShoppingItem,
+  postShoppingItem,
+} from 'services'
+import type {
+  ShoppingItemPatchPayloadRequest,
+  ShoppingItemPostPayloadRequest,
+} from 'typings/services'
 
 const useGetShoppingList = () => {
-  const [list, setList] =  useState<any[]>([])
+  const [list, setList] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const fetch = useCallback(async() => {
+  const fetch = useCallback(async () => {
     try {
       setIsLoading(true)
       const res = await getShoppingList<any>()
@@ -25,40 +33,37 @@ const useGetShoppingList = () => {
   return {
     shoppingList: list,
     refetch: fetch,
-    isLoading
+    isLoading,
   }
 }
 
 const usePostShoppingItem = () => {
-
   const onPost = (payload: ShoppingItemPostPayloadRequest) => {
     return postShoppingItem(payload)
   }
 
   return {
-    onPost
+    onPost,
   }
 }
 
 const usePatchShoppingItem = () => {
-
   const onPatch = (payload: ShoppingItemPatchPayloadRequest) => {
     return patchShoppingItem(payload)
   }
 
   return {
-    onPatch
+    onPatch,
   }
 }
 
 const useDeleteShoppingItem = () => {
-
   const onDelete = (id: string) => {
     return deleteShoppingItemById(id)
   }
-  
+
   return {
-    onDelete
+    onDelete,
   }
 }
 
@@ -66,5 +71,5 @@ export {
   useGetShoppingList,
   usePostShoppingItem,
   usePatchShoppingItem,
-  useDeleteShoppingItem
+  useDeleteShoppingItem,
 }

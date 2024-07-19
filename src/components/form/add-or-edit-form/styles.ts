@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const StyledAddOrEditFormContainer = styled.div`
   min-width: 560px;
@@ -7,13 +7,13 @@ export const StyledAddOrEditFormContainer = styled.div`
 export const StyledAddOrEditFormHeader = styled.div`
   width: 100%;
   height: 64px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   padding: 20px 30px;
 `
 
 export const StyledAddOrEditFormBody = styled.div`
   width: 100%;
-  height: 100%; 
+  height: 100%;
   padding: 28px 30px;
   display: flex;
   flex-direction: column;

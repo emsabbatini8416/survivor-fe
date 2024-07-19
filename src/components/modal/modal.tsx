@@ -1,4 +1,8 @@
-import { StyledModalBackdrop, StyledModalContainer, StyledModalContent } from "./styles"
+import {
+  StyledModalBackdrop,
+  StyledModalContainer,
+  StyledModalContent,
+} from './styles'
 
 export interface ModalProps {
   onClose: () => void

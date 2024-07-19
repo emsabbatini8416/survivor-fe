@@ -1,18 +1,26 @@
-
-import { AddOrEditForm, CardEmpty, Item, ItemList, Modal } from "components"
-import { LayoutPage } from "../../layouts"
-import { DeleteConfirmation } from "components/modal/delete-confirmation"
-import React from "react"
-import { useDeleteShoppingItem, useGetShoppingList, usePatchShoppingItem, usePostShoppingItem } from "./shopping.utils"
-import { ShoppingItem } from "typings/models"
-import { CircularProgress, Drawer } from "@mui/material"
-import { ShoppingItemPatchPayloadRequest, ShoppingItemPostPayloadRequest } from "typings/services"
+import { AddOrEditForm, CardEmpty, Item, ItemList, Modal } from 'components'
+import { LayoutPage } from '../../layouts'
+import { DeleteConfirmation } from 'components/modal/delete-confirmation'
+import React from 'react'
+import {
+  useDeleteShoppingItem,
+  useGetShoppingList,
+  usePatchShoppingItem,
+  usePostShoppingItem,
+} from './shopping.utils'
+import { ShoppingItem } from 'typings/models'
+import { CircularProgress, Drawer } from '@mui/material'
+import {
+  ShoppingItemPatchPayloadRequest,
+  ShoppingItemPostPayloadRequest,
+} from 'typings/services'
 
 const ShoppingPage = () => {
   const [openAddOrEdit, setOpenAddOrEdit] = React.useState<boolean>(false)
-  const [openDeleteConfirmation, setOpenDeleteConfirmation] = React.useState<boolean>(false)
+  const [openDeleteConfirmation, setOpenDeleteConfirmation] =
+    React.useState<boolean>(false)
   const [idToDelete, setIdToDelete] = React.useState<string>('')
-  const [itemToEdit, setItemToEdit] =  React.useState<ShoppingItem>(null)
+  const [itemToEdit, setItemToEdit] = React.useState<ShoppingItem>(null)
 
   const { shoppingList, refetch, isLoading } = useGetShoppingList()
   const { onPost } = usePostShoppingItem()
@@ -33,11 +41,13 @@ const ShoppingPage = () => {
     setOpenAddOrEdit(true)
   }
 
-  const handleOnSave = async(isEdit: boolean, payload: ShoppingItemPostPayloadRequest | ShoppingItemPatchPayloadRequest) => {
-
+  const handleOnSave = async (
+    isEdit: boolean,
+    payload: ShoppingItemPostPayloadRequest | ShoppingItemPatchPayloadRequest,
+  ) => {
     if (!isEdit) await onPost(payload as ShoppingItemPostPayloadRequest)
     else await onPatch(payload as ShoppingItemPatchPayloadRequest)
-      
+
     setItemToEdit(null)
     setOpenAddOrEdit(false)
     refetch()
@@ -52,37 +62,40 @@ const ShoppingPage = () => {
     setIdToDelete(id)
     setOpenDeleteConfirmation(true)
   }
-  const handleOnDelete = async(id: string) => {
+  const handleOnDelete = async (id: string) => {
     await onDelete(id)
     setOpenDeleteConfirmation(false)
     refetch()
   }
 
-  return(
+  return (
     <LayoutPage>
-      { isLoading && <CircularProgress /> }
-      { shoppingList.length === 0 
-        ? <CardEmpty onAdd={handleOnAddDrawer} />
-        : (
-          <ItemList onAdd={handleOnAddDrawer}>
-            {shoppingList.map((item: ShoppingItem) => (
-              <Item 
-                item={item} 
-                onEdit={handleOnSelectToEdit} 
-                onDelete={handleOnOpenDeleteConfirmationModal} 
-              />
-            ))}
-          </ItemList>
-        )
-      }
+      {isLoading && <CircularProgress />}
+      {shoppingList.length === 0 ? (
+        <CardEmpty onAdd={handleOnAddDrawer} />
+      ) : (
+        <ItemList onAdd={handleOnAddDrawer}>
+          {shoppingList.map((item: ShoppingItem) => (
+            <Item
+              item={item}
+              onEdit={handleOnSelectToEdit}
+              onDelete={handleOnOpenDeleteConfirmationModal}
+            />
+          ))}
+        </ItemList>
+      )}
       <Drawer open={openAddOrEdit} anchor="right" onClose={handleOnCloseDrawer}>
-        <AddOrEditForm item={itemToEdit} onClose={handleOnCloseDrawer} onSave={handleOnSave} />
+        <AddOrEditForm
+          item={itemToEdit}
+          onClose={handleOnCloseDrawer}
+          onSave={handleOnSave}
+        />
       </Drawer>
       {openDeleteConfirmation && (
         <Modal onClose={handleOnCloseDeleteConfirmationModal}>
-          <DeleteConfirmation 
-            onCancel={handleOnCloseDeleteConfirmationModal} 
-            onConfirmation={() => handleOnDelete(idToDelete)} 
+          <DeleteConfirmation
+            onCancel={handleOnCloseDeleteConfirmationModal}
+            onConfirmation={() => handleOnDelete(idToDelete)}
           />
         </Modal>
       )}

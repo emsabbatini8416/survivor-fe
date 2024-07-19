@@ -8,6 +8,4 @@ const Shopping = () => (
   </React.Suspense>
 )
 
-export {
-  Shopping
-}
+export { Shopping }

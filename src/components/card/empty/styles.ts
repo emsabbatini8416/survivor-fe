@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 
 export const StyledCardEmptyContainer = styled.div`
   width: 614px;
@@ -7,7 +7,7 @@ export const StyledCardEmptyContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid #C6C6C6;
+  border: 1px solid #c6c6c6;
   border-radius: 5px;
   border: 1px 0px 0px 0px;
 

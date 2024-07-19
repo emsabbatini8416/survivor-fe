@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { InputHTMLAttributes } from "react";
+import styled from '@emotion/styled'
+import { InputHTMLAttributes } from 'react'
 
 export interface ButtonProps extends InputHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary'
@@ -18,18 +18,19 @@ const Button = styled.button<ButtonProps>`
   line-height: 20px;
 
   color: white;
-  background-color: #1871E8;
+  background-color: #1871e8;
 
   :hover {
     cursor: pointer;
     opacity: 0.9;
   }
 
-  ${({ variant = 'primary' }) => variant === 'secondary' && `
+  ${({ variant = 'primary' }) =>
+    variant === 'secondary' &&
+    `
     color: black;
     background-color: white;
   `}
-
 `
 
 export default Button
