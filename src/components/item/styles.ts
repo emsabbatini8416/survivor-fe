@@ -1,8 +1,7 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { SpanText } from 'components'
 
-export const StyledItemContainer = styled.div`
+export const StyledItemContainer = styled.div<{ $isPurchased?: boolean }>`
   display: flex;
   width: 1024px;
   height: 86px;
@@ -10,9 +9,22 @@ export const StyledItemContainer = styled.div`
 
   border-radius: 4px;
   border: 0.5px solid #d5dfe9;
+
+  ${({ $isPurchased }) =>
+    $isPurchased &&
+    css`
+      span {
+        text-decoration: line-through;
+      }
+    `}
+
+  :hover {
+    background-color: #d5dfe92b;
+  }
 `
 
 export const StyledCheck = styled.div``
+
 export const StyledMain = styled.div`
   display: flex;
   width: 100%;
@@ -26,13 +38,5 @@ export const StyledActions = styled.div`
 export const StyledButtonWrapper = styled.div`
   :hover {
     cursor: pointer;
-    opacity: 0.9;
   }
-`
-export const StyledSpanText = styled(SpanText)<{ $isPurchased?: boolean }>`
-  ${({ $isPurchased }) =>
-    $isPurchased &&
-    css`
-      text-decoration: line-through;
-    `}
 `

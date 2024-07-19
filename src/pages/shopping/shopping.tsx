@@ -78,7 +78,7 @@ const ShoppingPage = () => {
           {shoppingList.map((item: ShoppingItem) => (
             <Item
               key={item._id}
-              item={item}
+              item={{ ...item }}
               onEdit={handleOnSelectToEdit}
               onDelete={handleOnOpenDeleteConfirmationModal}
             />

@@ -5,9 +5,9 @@ export const StyledListItemContainer = styled.div`
   flex-direction: column;
   width: 1026px;
   height: 100%;
+  gap: 10px;
 `
 export const StyledListItemHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
 `
