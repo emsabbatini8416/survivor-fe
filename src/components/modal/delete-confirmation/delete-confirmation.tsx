@@ -4,12 +4,12 @@ import {
   StyledDeleteConfirmationContainer,
 } from './styles'
 
-export interface DeleteConfirmation {
+export interface DeleteConfirmationProps {
   onConfirmation: () => void
   onCancel: () => void
 }
 
-const DeleteConfirmation = (props: DeleteConfirmation) => {
+const DeleteConfirmation = (props: DeleteConfirmationProps) => {
   const { onCancel, onConfirmation } = props
 
   const handleOnConfirmation = () => onConfirmation()
