@@ -50,7 +50,6 @@ const AddOrEditForm = (props: AddOrEditFormProps) => {
   const actionLabel = !item ? 'Add' : 'Edit'
 
   const handleOnSave = () => {
-    debugger
     if (!item) {
       onSave(false, {
         name: form.name,

@@ -77,6 +77,7 @@ const ShoppingPage = () => {
         <ItemList onAdd={handleOnAddDrawer}>
           {shoppingList.map((item: ShoppingItem) => (
             <Item
+              key={item._id}
               item={item}
               onEdit={handleOnSelectToEdit}
               onDelete={handleOnOpenDeleteConfirmationModal}

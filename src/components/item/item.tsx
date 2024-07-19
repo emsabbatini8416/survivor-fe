@@ -5,8 +5,9 @@ import {
   StyledCheck,
   StyledItemContainer,
   StyledMain,
+  StyledSpanText,
 } from './styles'
-import { Icon, SpanText } from 'components'
+import { Icon } from 'components'
 import { ShoppingItem } from 'typings/models'
 
 export interface ItemProps {
@@ -17,18 +18,24 @@ export interface ItemProps {
 
 const Item = (props: ItemProps) => {
   const { item, onDelete, onEdit } = props
-  const { _id, name: title, description } = item
-
+  const { _id, name: title, description, purchased } = item
+  console.log(purchased)
   return (
     <StyledItemContainer>
       <StyledCheck>
-        <Checkbox />
+        <Checkbox checked={purchased} />
       </StyledCheck>
       <StyledMain>
-        <SpanText variant="NUNITO_16_600_20">{title}</SpanText>
-        <SpanText variant="NUNITO_16_600_20" color="#7D7A7A">
+        <StyledSpanText variant="NUNITO_16_600_20" $isPurchased={purchased}>
+          {title}
+        </StyledSpanText>
+        <StyledSpanText
+          variant="NUNITO_16_600_20"
+          $isPurchased={purchased}
+          color="#7D7A7A"
+        >
           {description}
-        </SpanText>
+        </StyledSpanText>
       </StyledMain>
       <StyledActions>
         <StyledButtonWrapper onClick={() => onEdit(item)}>

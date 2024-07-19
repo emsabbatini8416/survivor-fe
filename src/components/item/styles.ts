@@ -1,4 +1,6 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { SpanText } from 'components'
 
 export const StyledItemContainer = styled.div`
   display: flex;
@@ -26,4 +28,11 @@ export const StyledButtonWrapper = styled.div`
     cursor: pointer;
     opacity: 0.9;
   }
+`
+export const StyledSpanText = styled(SpanText)<{ $isPurchased?: boolean }>`
+  ${({ $isPurchased }) =>
+    $isPurchased &&
+    css`
+      text-decoration: line-through;
+    `}
 `
