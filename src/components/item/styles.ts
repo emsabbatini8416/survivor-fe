@@ -3,7 +3,8 @@ import styled from '@emotion/styled'
 
 export const StyledItemContainer = styled.div<{ $isPurchased?: boolean }>`
   display: flex;
-  width: 1024px;
+  width: 100%;
+  max-width: 1024px;
   height: 86px;
   padding: 24px 16px;
 

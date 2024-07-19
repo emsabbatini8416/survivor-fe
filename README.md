@@ -24,6 +24,7 @@ $ localhost:3000
 ## Credits
 
 This software uses the following open source packages:
+
 - [Create React App](https://create-react-app.dev/)
 - [Node.js](https://nodejs.org/)
 - [React.js](https://es.react.dev/)
