@@ -7,10 +7,15 @@ export const StyledDeleteConfirmationContainer = styled.div`
     flex-direction: column;
     border-radius: 4px;
     padding: 30px;
+    position: relative;
 `
 
 export const StyledDeleteConfirmationButtonsContainer = styled.div`
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    justify-content: flex-end;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    gap: 10px;
 `

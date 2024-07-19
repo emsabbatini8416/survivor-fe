@@ -7,11 +7,13 @@ import { ShoppingItem } from "typings/models"
 export interface ItemProps {
   item: ShoppingItem
   onDelete: (id: string) => void
-  onEdit: () => void
+  onEdit: (item: ShoppingItem) => void
 }
 
 const Item = (props: ItemProps) => {
-  const { item: { _id, name: title, description }, onDelete, onEdit } = props
+  const { item, onDelete, onEdit } = props
+  const { _id, name: title, description } = item
+  
   return (
     <StyledItemContainer>
       <StyledCheck>
@@ -22,7 +24,7 @@ const Item = (props: ItemProps) => {
         <SpanText variant='NUNITO_16_600_20' color="#7D7A7A">{description}</SpanText>
       </StyledMain>
       <StyledActions>
-        <StyledButtonWrapper onClick={onEdit}>
+        <StyledButtonWrapper onClick={() => onEdit(item)}>
           <Icon name="Edit" />
         </StyledButtonWrapper>
         <StyledButtonWrapper onClick={() => onDelete(_id)}>
