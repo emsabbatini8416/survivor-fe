@@ -12,13 +12,13 @@ const Button = styled.button<ButtonProps>`
   border: none;
   border-radius: 4px;
 
-  font-family: Nunito;
+  font-family: Inter;
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
 
   color: white;
-  background-color: #1871e8;
+  background-color: #4d194d;
 
   :hover {
     cursor: pointer;
@@ -30,6 +30,7 @@ const Button = styled.button<ButtonProps>`
     `
     color: black;
     background-color: white;
+    border: 1px solid #E6E6E6;
   `}
 `
 

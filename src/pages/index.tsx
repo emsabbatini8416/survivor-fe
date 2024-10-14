@@ -1,11 +1,27 @@
 import React from 'react'
 
-const ShoppingLazy = React.lazy(() => import('./shopping'))
+const DashboardLazy = React.lazy(() => import('./dashboard'))
 
-const Shopping = () => (
+const SurvivorsLazy = React.lazy(() => import('./survivors'))
+
+const InventoryLazy = React.lazy(() => import('./inventory'))
+
+const Dashboard = () => (
   <React.Suspense fallback={null}>
-    <ShoppingLazy />
+    <DashboardLazy />
   </React.Suspense>
 )
 
-export { Shopping }
+const Survivors = () => (
+  <React.Suspense fallback={null}>
+    <SurvivorsLazy />
+  </React.Suspense>
+)
+
+const Inventory = () => (
+  <React.Suspense fallback={null}>
+    <InventoryLazy />
+  </React.Suspense>
+)
+
+export { Dashboard, Survivors, Inventory }

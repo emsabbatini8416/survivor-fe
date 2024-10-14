@@ -1,10 +1,13 @@
+import { Outlet } from 'react-router-dom'
 import { NavBar } from 'components'
 import { Container, Layout } from './styles'
 
-const LayoutPage = ({ children }: React.PropsWithChildren<unknown>) => (
+const LayoutPage = () => (
   <Layout>
     <NavBar />
-    <Container>{children}</Container>
+    <Container>
+      <Outlet />
+    </Container>
   </Layout>
 )
 

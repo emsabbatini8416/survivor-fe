@@ -1,10 +1,11 @@
-import { Shopping } from './pages'
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from 'router'
 
 function App() {
   return (
-    <>
-      <Shopping />
-    </>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   )
 }
 

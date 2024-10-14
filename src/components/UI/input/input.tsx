@@ -1,17 +1,17 @@
 import { InputHTMLAttributes } from 'react'
-import { StyledInput, StyledTextArea } from './styles'
+import { StyledInput, StyledLabel, StyleInputWrapper } from './styles'
 
-export interface InputProps
-  extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
-  isTextArea?: boolean
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  label: string
 }
 
-const Input = ({ isTextArea = false, ...rest }: InputProps) => {
-  if (isTextArea) {
-    return <StyledTextArea {...rest} rows={5} />
-  }
-
-  return <StyledInput {...rest} />
+const Input = ({ label, ...rest }: InputProps) => {
+  return (
+    <StyleInputWrapper>
+      <StyledLabel>{label}</StyledLabel>
+      <StyledInput {...rest} />
+    </StyleInputWrapper>
+  )
 }
 
 export default Input

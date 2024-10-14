@@ -6,10 +6,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/emsabbatini8416/shopping-list-fe
+$ git clone https://github.com/emsabbatini8416/survivor-fe
 
 # Go into the repository
-$ cd shopping-list-fe
+$ cd survivor-fe
 
 # Install dependencies
 $ npm install

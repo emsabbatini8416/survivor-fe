@@ -10,41 +10,71 @@ export interface StyledSpanProps {
 }
 
 const textVariantsCSS = {
-  [TextVariants.DOSIS_18_600_22]: () => css`
-    font-family: 'Dosis', sans-serif;
-    font-size: 18px;
+  [TextVariants.INTER_600_32_40]: () => css`
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
-    line-height: 22px;
+    font-size: 32px;
+    line-height: 40px;
   `,
-  [TextVariants.NUNITO_18_400_24]: () => css`
-    font-family: 'Nunito', sans-serif;
+  [TextVariants.INTER_600_18_24]: () => css`
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     font-size: 18px;
-    font-weight: 400;
     line-height: 24px;
   `,
-  [TextVariants.NUNITO_18_600_24]: () => css`
-    font-family: 'Nunito', sans-serif;
-    font-size: 18px;
+  [TextVariants.INTER_600_16_26]: () => css`
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
-    line-height: 24px;
-  `,
-  [TextVariants.NUNITO_16_600_20]: () => css`
-    font-family: 'Nunito', sans-serif;
     font-size: 16px;
+    line-height: 26px;
+  `,
+  [TextVariants.INTER_600_14_20]: () => css`
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
+    font-size: 14px;
     line-height: 20px;
   `,
-  [TextVariants.NUNITO_14_400_20]: () => css`
-    font-family: 'Nunito', sans-serif;
+  [TextVariants.INTER_600_12_18]: () => css`
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+  `,
+  [TextVariants.INTER_500_20_18]: () => css`
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 18px;
+  `,
+  [TextVariants.INTER_500_16_44]: () => css`
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 44px;
+  `,
+  [TextVariants.INTER_500_14_44]: () => css`
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
     font-size: 14px;
+    line-height: 44px;
+  `,
+  [TextVariants.INTER_500_12_18]: () => css`
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  `,
+  [TextVariants.INTER_400_14_20]: () => css`
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
+    font-size: 14px;
     line-height: 20px;
   `,
-  [TextVariants.NUNITO_14_600_20]: () => css`
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
+  [TextVariants.INTER_400_12_18]: () => css`
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
   `,
 }
 

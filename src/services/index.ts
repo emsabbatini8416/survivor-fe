@@ -1,1 +1,2 @@
-export * from './shopping'
+export * from './report'
+export * from './survivor'
